@@ -1,0 +1,14 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/competitionsadmin/css/main.css') }}" type="text/css" media="all"  />
+{% endblock %}
+
+
+{% block logo %}
+
+    {{ parent() }}
+    <div class="logout"><a href="{{ url('logout') }}">Logout</a></div>
+
+{% endblock %}

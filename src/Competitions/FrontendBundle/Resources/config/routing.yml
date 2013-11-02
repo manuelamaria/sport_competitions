@@ -1,0 +1,3 @@
+competitions_frontend_filtered_list:
+    pattern: /competition/list/{filter}
+    defaults: { _controller: CompetitionsFrontendBundle:Competition:list, filter: null }

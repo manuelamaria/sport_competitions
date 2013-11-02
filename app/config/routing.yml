@@ -1,0 +1,39 @@
+_welcome:
+    pattern:  /
+    defaults: { _controller: CompetitionsFrontendBundle:Home:index }
+
+competitions_frontend:
+    resource: "@CompetitionsFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+competitions_admin:
+    resource: "@CompetitionsAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+    
+_imagine:
+    resource: .
+    type: imagine
+    
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"    
+   
+login:
+    pattern:   /admin/login
+    defaults:  { _controller: CompetitionsAdminBundle:Default:login }
+    
+login_check:
+    pattern:   /admin/login_check    
+    
+logout:
+    pattern:   /admin/logout
+    
+    

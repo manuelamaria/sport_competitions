@@ -1,0 +1,39 @@
+<div id="header">
+    <div id="logo"><div class="content">COMPETITII<strong>SPORTIVE</strong></div></div>
+    <div id="header-right">
+        <div id="categories-filter">
+            <img ng-class="{'not-selected' : (filters.indexOf(1) === -1)}" src="/bundles/competitionsfrontend/images/Ski.png" ng-click="toggleFilter(1)" />
+            <img ng-class="{'not-selected' : (filters.indexOf(2) === -1)}" src="/bundles/competitionsfrontend/images/Climb.png" ng-click="toggleFilter(2)" />
+            <img ng-class="{'not-selected' : (filters.indexOf(3) === -1)}" src="/bundles/competitionsfrontend/images/Swim.png" ng-click="toggleFilter(3)" />
+            <img ng-class="{'not-selected' : (filters.indexOf(4) === -1)}" src="/bundles/competitionsfrontend/images/Bike.png" ng-click="toggleFilter(4)" />
+            <img ng-class="{'not-selected' : (filters.indexOf(5) === -1)}" src="/bundles/competitionsfrontend/images/Run.png" ng-click="toggleFilter(5)" />
+        </div>
+    </div>
+</div>
+
+<div id="content" ng-init="search()">    
+    <ul>
+        <li ng-repeat="competition in pagedCompetitions[currentPage]">
+            <div id="competition-ski">
+                <div id="date">
+                    <div id="day">{{ competition.start_date | date:'d'  }}</div>
+                    <div id="month">{{ competition.start_date | date:'MMM' | uppercase }}</div>
+                    <div id="icon"><img  ng-src="/bundles/competitionsfrontend/images/{{competition.categories[0].name}}.png" width="35" height="35" /></div>
+                </div>
+                <div id="image"> 
+                    <img src="/bundles/competitionsfrontend/images/default_icon.png" style="opacity: 0.2; " width=120 height=93  />
+                </div>
+                <div id="text"> 
+                    <div id="title"><a href="{{ competition.website }}" target="_blank">{{ competition.name | uppercase }} </a></div>
+                    <div id="description">{{ competition.description }}</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div id="pagination">
+        <a href ng-click="prevPage()" ng-class="{disabled: currentPage == 0}">&laquo;</a>
+        <span style="padding: 0 10px 0 10px">page {{ currentPage + 1 }}</span>
+        <a href ng-click="nextPage()"  ng-class="{disabled: currentPage == pagedCompetitions.length - 1 }">&raquo;</a>
+    </div>
+</div>

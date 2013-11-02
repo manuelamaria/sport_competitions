@@ -1,0 +1,10 @@
+services:
+    competitions.admin.competition:
+        class: Competitions\AdminBundle\Admin\CompetitionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: competitions, label: "Competition" }
+        arguments:
+            - ~
+            - Competitions\AdminBundle\Entity\Competition
+            - 'CompetitionsAdminBundle:Competition'
+        

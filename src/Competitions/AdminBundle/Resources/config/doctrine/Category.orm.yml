@@ -1,0 +1,15 @@
+Competitions\AdminBundle\Entity\Category:
+    type: entity
+    table: null
+#    repositoryClass: Competitions\AdminBundle\Repository\CategoryRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+            
+    lifecycleCallbacks: {  }

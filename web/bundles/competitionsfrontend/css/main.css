@@ -1,0 +1,53 @@
+/* 
+    Document   : main
+    Created on : Jun 22, 2013, 2:15:01 PM
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body { font-family: Arial, Helvetica, sans-serif; font-size:14px; color: #808080; margin-left:auto; margin-right:auto; margin-top:0;  padding:0; width: 75%; }
+
+#top-line { margin: 0; padding: 0 }
+#top-line div { float: left; height: 7px; width: 10%; }
+
+#header { margin-left: auto; margin-right: auto; width: 80%; overflow: hidden; clear:left; }
+#logo { float: left; margin-top:20px; margin-left: auto; }
+#logo .content { color: #000000; font-size: 18px; vertical-align: middle; margin-top: 20px; margin-left: 40px;}
+#header-right { float: right; }
+
+#categories-filter { margin-top:20px;}
+#categories-filter img { margin-left: 10px; cursor: pointer; }
+#categories-filter img.not-selected { opacity:0.3; }
+#categories-filter img.selected { opacity:1; }
+
+#content { margin-left: auto; margin-right: auto; width:80%; margin-top: 50px; }
+
+#title { font-family: Georgia, serif; font-size: 16px; }
+#title a { text-decoration: none; cursor: pointer; color: #808080; }
+#title a:hover { text-decoration: none; cursor: pointer; color: #000000; }
+#description { padding-top:15px; font-size:14px; }
+
+div[id^="competition-"] { height: 120px; padding:15px;  }
+#competition-         { border-top: 2px solid #FBB9BB; }
+#competition-Ski      { border-top: 1px solid #77459E; }
+#competition-Climb { border-top: 2px solid #FFC700; }
+#competition-Bike     { border-top: 2px solid #EE1C25; }
+#competition-Swim { border-top: 2px solid #00ADEF; }
+#competition-Run  { border-top: 2px solid #00A654; }
+
+#date { width:40px; float:left; color: #494949; }
+#day { width:35px;text-align: center; font-size:30px; font-weight:bold; font-family: Impact, sans-serif }
+#month { width:35px;text-align: center; font-size:16px; }
+#image { width: 160px; float: left; text-align: center; }
+#text { overflow: hidden; }
+
+#footer { text-align: center; width: 100%; font-size: 11px; color: #00ADEF; margin-bottom: 20px; }
+
+#pagination { text-align: center; padding:0 0 30px 0; font-size: 11px; }
+#pagination a { color:#00ADEF; cursor: pointer; text-decoration: none; }
+#pagination a.disabled { cursor: default; color: grey; text-decoration: none; }

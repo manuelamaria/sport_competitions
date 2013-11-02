@@ -1,0 +1,37 @@
+{
+    "name": "sonata-project/jquery-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony SonatajQueryBundle",
+    "keywords": ["jQuery", "sonata"],
+    "homepage": "http://sonata-project.org/bundles/jquery",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Rabaix",
+            "email": "thomas.rabaix@sonata-project.org",
+            "homepage": "http://sonata-project.org"
+        },
+        {
+            "name": "Sonata Community",
+            "homepage": "https://github.com/sonata-project/SonatajQueryBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "Sonata\\jQueryBundle": "" }
+    },
+    "target-dir": "Sonata/jQueryBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-1.4": "1.4.x-dev",
+            "dev-1.5": "1.5.x-dev",
+            "dev-1.6": "1.6.x-dev",
+            "dev-1.7": "1.7.x-dev",
+            "dev-1.8": "1.8.x-dev",
+            "dev-master": "1.9.x-dev"
+        }
+    }
+}

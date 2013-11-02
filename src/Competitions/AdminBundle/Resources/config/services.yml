@@ -1,0 +1,7 @@
+parameters:
+#    competitions_admin.example.class: Competitions\AdminBundle\Example
+
+services:
+#    competitions_admin.example:
+#        class: %competitions_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
