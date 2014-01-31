@@ -17,7 +17,7 @@ body { font-family: Arial, Helvetica, sans-serif; font-size:14px; color: #808080
 #top-line { margin: 0; padding: 0 }
 #top-line div { float: left; height: 7px; width: 10%; }
 
-#header { margin-left: auto; margin-right: auto; width: 80%; overflow: hidden; clear:left; }
+#filters { margin-left: auto; margin-right: auto; width: 80%; overflow: hidden; clear:left; }
 #logo { float: left; margin-top:20px; margin-left: auto; }
 #logo .content { color: #000000; font-size: 18px; vertical-align: middle; margin-top: 20px; margin-left: 40px; cursor: pointer; }
 #logo a { text-decoration: none; color: #000000; }
