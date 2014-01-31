@@ -31,9 +31,11 @@
         </li>
     </ul>
 
-    <div id="pagination">
+    <div id="pagination" ng-hide="!pagedCompetitions.length">
         <a href ng-click="prevPage()" ng-class="{disabled: currentPage == 0}">&laquo;</a>
         <span style="padding: 0 10px 0 10px">page {{ currentPage + 1 }}</span>
         <a href ng-click="nextPage()"  ng-class="{disabled: currentPage == pagedCompetitions.length - 1 }">&raquo;</a>
     </div>
+    
+    <div id="message" ng-show="!pagedCompetitions.length">Niciun rezultat</div>
 </div>
