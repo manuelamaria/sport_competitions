@@ -26,6 +26,7 @@ function CompetitionsCtrl($scope, Competition) {
       }
 
     }
+    $scope.finishedPagination = true;
   }
  
   $scope.setPage = function(n) {
