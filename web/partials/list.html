@@ -11,7 +11,16 @@
     </div>
 </div>
 
+
+
 <div id="content" ng-init="search()">    
+    
+    <div id="pagination" ng-show="finishedPagination && pagedCompetitions.length">
+            <a href ng-click="prevPage()" ng-class="{disabled: currentPage == 0}">&laquo;</a>
+            <span style="padding: 0 10px 0 10px">page {{ currentPage + 1 }}</span>
+            <a href ng-click="nextPage()"  ng-class="{disabled: currentPage == pagedCompetitions.length - 1 }">&raquo;</a>
+    </div>
+    
     <ul>
         <li ng-repeat="competition in pagedCompetitions[currentPage]">
             <div id="competition-ski">

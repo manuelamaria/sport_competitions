@@ -29,7 +29,8 @@ body { font-family: Arial, Helvetica, sans-serif; font-size:14px; color: #808080
 #categories-filter img.not-selected { opacity:0.3; }
 #categories-filter img.selected { opacity:1; }
 
-#content { margin-left: auto; margin-right: auto; width:80%; margin-top: 50px; }
+#content { margin-left: auto; margin-right: auto; width:80%; margin-top: 50px; padding-bottom: 30px; }
+#content ul { margin: 15px 0 0 0; }
 
 #title { font-family: Georgia, serif; font-size: 16px; }
 #title a { text-decoration: none; cursor: pointer; color: #808080; }
@@ -50,9 +51,9 @@ div[id^="competition-"] { height: 120px; padding:15px;  }
 #image { width: 160px; float: left; text-align: center; }
 #text { overflow: hidden; }
 
-#footer { text-align: center; width: 100%; font-size: 11px; color: #00ADEF; position:absolute; bottom:0; height:20px; margin-top:20px; }
+#footer { text-align: center; width: 100%; font-size: 11px; color: #00ADEF; position:absolute; bottom:0; height:20px; }
 
-#pagination { text-align: center; padding:0 0 40px 0; font-size: 11px; }
+#pagination { text-align: center; padding:10px 0 10px 0; font-size: 11px; }
 #pagination a { color:#00ADEF; cursor: pointer; text-decoration: none; }
 #pagination a.disabled { cursor: default; color: grey; text-decoration: none; }
 
