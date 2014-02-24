@@ -23,7 +23,7 @@
     
     <ul>
         <li ng-repeat="competition in pagedCompetitions[currentPage]">
-            <div id="competition-ski">
+            <div id="competition-{{competition.categories[0].name}}"> 
                 <div id="date">
                     <div id="day">{{ competition.start_date | date:'d'  }}</div>
                     <div id="month">{{ competition.start_date | date:'MMM' | uppercase }}</div>

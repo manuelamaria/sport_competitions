@@ -38,12 +38,12 @@ body { font-family: Arial, Helvetica, sans-serif; font-size:14px; color: #808080
 #description { padding-top:15px; font-size:14px; }
 
 div[id^="competition-"] { height: 120px; padding:15px;  }
-#competition-         { border-top: 2px solid #FBB9BB; }
+#competition-         { border-top: 1px solid #FBB9BB; }
 #competition-Ski      { border-top: 1px solid #77459E; }
-#competition-Climb { border-top: 2px solid #FFC700; }
-#competition-Bike     { border-top: 2px solid #EE1C25; }
-#competition-Swim { border-top: 2px solid #00ADEF; }
-#competition-Run  { border-top: 2px solid #00A654; }
+#competition-Climb    { border-top: 1px solid #FFC700; }
+#competition-Bike     { border-top: 1px solid #EE1C25; }
+#competition-Swim     { border-top: 1px solid #00ADEF; }
+#competition-Run      { border-top: 1px solid #00A654; }
 
 #date { width:40px; float:left; color: #494949; }
 #day { width:35px;text-align: center; font-size:30px; font-weight:bold; font-family: Impact, sans-serif }
