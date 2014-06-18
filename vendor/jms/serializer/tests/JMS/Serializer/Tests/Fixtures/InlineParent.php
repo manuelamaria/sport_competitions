@@ -35,13 +35,12 @@ class InlineParent
     private $d = 'd';
 
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\InlineChild")
      * @Serializer\Inline
      */
     private $child;
 
-    public function __construct()
+    public function __construct($child = null)
     {
-        $this->child = new InlineChild();
+        $this->child = $child ?: new InlineChild();
     }
 }

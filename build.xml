@@ -1,0 +1,13 @@
+<project name="CS" default="config" basedir=".">
+    <target name="config" description="Configuration setup">
+        <echo msg="Database setup" />
+        <SymfonyConsole command="doctrine:database:drop">
+            <arg name="force" />
+        </SymfonyConsole>
+        <SymfonyConsole command="doctrine:database:create" />
+        <SymfonyConsole command="doctrine:schema:create" />
+        <SymfonyConsole command="doctrine:fixtures:load">
+            <arg name="no-interaction" />
+        </SymfonyConsole>  
+    </target>
+</project>

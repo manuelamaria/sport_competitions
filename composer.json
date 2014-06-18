@@ -1,0 +1,29 @@
+{
+    "name": "vendor/cs",
+    "description": "Description of project cs.",
+    "authors": [
+        {
+            "name": "mticudean",
+            "email": "your@email.here"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "symfony/framework-standard-edition": "v2.2.1",
+        "sonata-project/cache": "dev-master",
+        "sonata-project/cache-bundle": "2.2.x-dev",
+        "sonata-project/block-bundle": "2.2.x-dev",
+        "sonata-project/jquery-bundle": "1.8.3",
+        "sonata-project/admin-bundle": "2.2.x-dev",
+        "sonata-project/doctrine-orm-admin-bundle": "2.2.7",
+        "sonata-project/intl-bundle": "2.2.1",
+        "avalanche123/imagine-bundle": "v2.1.2",
+        "sonata-project/core-bundle": "2.2.x-dev",
+        "doctrine/doctrine-fixtures-bundle": "v2.2.0",
+        "friendsofsymfony/jsrouting-bundle": "1.*@dev",
+        "jms/serializer": "dev-master"
+
+    }
+}
