@@ -1,61 +1,73 @@
 function CompetitionsCtrl($scope, Competition) {
-  $scope.filters = [];  
-    
-  $scope.competitions = [];  
-  $scope.pagedCompetitions = [];
-  $scope.currentPage = 0;
-  
-  
-  
-  $scope.search = function () {
-      $scope.competitions = Competition.query({'filter' : JSON.stringify($scope.filters)}, function () { $scope.paginate(); });
-      
-  }
-  
-  
-  var itemsPerPage = 5;
-  $scope.paginate = function () {
-      $scope.pagedCompetitions = [];
-      $scope.currentPage = 0;
-      
-      for (var i = 0; i < $scope.competitions.length; i++) {
-      if (i % itemsPerPage === 0) {
-        $scope.pagedCompetitions[Math.floor(i / itemsPerPage)] = [ $scope.competitions[i] ];
-      } else {
-        $scope.pagedCompetitions[Math.floor(i / itemsPerPage)].push($scope.competitions[i]);
-      }
+    $scope.filters = [];
+    $scope.favoritesEnabled = false;
 
-    }
-    $scope.finishedPagination = true;
-  }
- 
-  $scope.setPage = function(n) {
-      $scope.currentPage = n;
-  }
-  
-  $scope.prevPage = function () {
-    if ($scope.currentPage > 0) {
-      $scope.currentPage--;
-    }
-  };
+    $scope.competitions = [];
+    $scope.page = 0;
+    $scope.itemsPerPage = 10;
+    $scope.loading = false;
 
-  $scope.nextPage = function () {
-    if ($scope.currentPage < $scope.pagedCompetitions.length - 1) {
-      $scope.currentPage++;
-    }
-  };
-  
-  $scope.toggleFilter = function (c) {
-    var index = $scope.filters.indexOf(c);
-    if ( index === -1)  {
-      $scope.filters.push(c);
+    if ((typeof localStorage['fav'] != 'undefined') && (localStorage['fav'].length > 0)) {
+        $scope.favorites = JSON.parse(localStorage.getItem('fav'));
     } else {
-      $scope.filters.splice(index, 1);
+        $scope.favorites = [];
     }
-    $scope.search();
-  }
- 
+
+    $scope.search = function() {
+
+        $scope.competitions = Competition.query({'filter': JSON.stringify($scope.filters),
+            'offset': $scope.page * $scope.itemsPerPage,
+            'limit': $scope.itemsPerPage});
+
+    }
+
+    $scope.loadNextPage = function() {
+        if ($scope.loading)
+            return;
+        $scope.loading = true;
+
+        $scope.page++;
+        $scope.newPage = Competition.query({'filter': JSON.stringify($scope.filters),
+            'offset': $scope.page * $scope.itemsPerPage,
+            'limit': $scope.itemsPerPage}, function() {
+            $scope.addNewPage();
+        });
+    }
+
+    $scope.addNewPage = function() {
+        for (var i = 0; i < $scope.newPage.length; i++) {
+            $scope.competitions.push($scope.newPage[i]);
+        }
+        $scope.loading = false;
+    }
+
+
+    $scope.toggleFilter = function(c) {
+        $scope.page = 0;
+        var index = $scope.filters.indexOf(c);
+        if (index === -1) {
+            $scope.filters.push(c);
+        } else {
+            $scope.filters.splice(index, 1);
+        }
+        $scope.search();
+    }
+
+    $scope.toggleFav = function(c) {
+        // add, remove to storage
+        var index = $scope.favorites.indexOf(c);
+        if (index === -1) {
+            $scope.favorites.push(c);
+        } else {
+            $scope.favorites.splice(index, 1);
+        }
+        localStorage['fav'] = JSON.stringify($scope.favorites);
+    }
+
+    $scope.toggleFavFilter = function() {
+        $scope.favoritesEnabled = !$scope.favoritesEnabled;
+    }
+
+
+
 }
- 
-var competitionsApp = angular.module('CompetitionsApp',['competitionsServices']);
-competitionsApp.controller('CompetitionsCtrl', CompetitionsCtrl);

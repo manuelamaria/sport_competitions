@@ -1,0 +1,21 @@
+{
+  "name": "cs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/manuelamaria/sport_competitions",
+  "authors": [
+    "manuelamaria@gmail.com"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "ngInfiniteScroll": "1.0.0",
+    "jquery": "~2.1.1"
+  }
+}
